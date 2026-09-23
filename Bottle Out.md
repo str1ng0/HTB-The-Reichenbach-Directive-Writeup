@@ -16,8 +16,10 @@ For the third flag, we also identified it from the same log file, in the line
 
 So, the IP assigned to the user by the VPN server is `10.129.175.2`.
 
-...
+To find the forth flag, we used the 'Recent Activity' ingestion of Autopsy. While we were searching for the previous flags, this ingestion ran on the background and finished its analysis. From there, we checked the `Installed Programs` section to find the forth flag `Tactical RMM Agent v.2.11.0`
 
-For the eight flag, we started searching for files that may relate to Gajim in the `$OrphanFiles` directory since the previous command wiped all Gajim folders. We found `Settings.sqlite` file in `$OrphanFiles/UserData/` folder including the keyword 'gajim.E0NTZC2M'. This file contained the email adress: `spurio9@murknet.htb` and the ninth flag password: `spur999!*`
+Fifth flag required us to find the domain that Tactical RMM Agent connected to. For that, we searched for log files in the System and OrpahanFiles but were unable to find any. Then, we decided to check the System32 Config files since it contains app configs. We found the fifth flag `api.antimattercommunication.xyz` and the sixth flag `98ec588da683c01820232943a6151e8e7772419b` SHA-1 Authentication Token in /Windows/System32/config/SOFTWARE/TacticalRMM.
+
+After finding the first operation vanish command `Remove-Item -LiteralPath C:\Users\spur\Gajim -Recurse -Force` (seventh flag), for the eight flag, we started searching for files that may relate to Gajim in the `$OrphanFiles` directory since the previous command wiped all Gajim folders. We found `Settings.sqlite` file in `$OrphanFiles/UserData/` folder including the keyword 'gajim.E0NTZC2M'. This file contained the email adress: `spurio9@murknet.htb` and the ninth flag password: `spur999!*`
  
-For the tenth flag, 000008.log gives us [TODO]
+The tenth flag took a while for us to find. After searching through various log and db files in `$OrphanedFiles`, we noticed the line `olk-SmtpActionableMessagesEnabled_Abel.stokes@hotmail.com` containing a full name `Abel Stokes` giving us the tenth flag.
