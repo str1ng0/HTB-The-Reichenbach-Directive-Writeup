@@ -18,4 +18,6 @@ So, the IP assigned to the user by the VPN server is `10.129.175.2`.
 
 ...
 
-For the tenth flag, 0000008.log gives us [TODO]
+For the eight flag, we started searching for files that may relate to Gajim in the `$OrphanFiles` directory since the previous command wiped all Gajim folders. We found `Settings.sqlite` file in `$OrphanFiles/UserData/` folder including the keyword 'gajim.E0NTZC2M'. This file contained the email adress: `spurio9@murknet.htb` and the ninth flag password: `spur999!*`
+ 
+For the tenth flag, 000008.log gives us [TODO]
